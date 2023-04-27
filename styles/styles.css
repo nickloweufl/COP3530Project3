@@ -1,0 +1,169 @@
+body {
+   font-family: sans-serif, Arial, Helvetica, sans-serif;
+   margin:  0px;
+   background-color: #333333;
+}
+
+.header {
+   background-color: #333333;
+   color: white;
+   position: relative;
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
+.title {
+   text-align: center;
+   background: #333333;
+   padding-top: 40px;
+   padding-bottom: 40px;
+   margin: 0;
+}
+.names {
+   padding: 10px;
+   background-color: #6b57c5;
+   margin: 0px;
+}
+
+.flex-row {
+   background: white;
+   display: flex;
+   justify-content: center;
+   min-height: 400px;
+}
+
+.options {
+   background-color: #5e5c5c;
+   border-style: solid;
+   flex-grow: 4;
+   border-right-style: none;
+   border-left-style: none;
+   border-color: black;
+   color: white;
+   justify-content: center;
+   align-items: stretch;
+   display:flex;
+}
+
+
+.selector {
+   padding: 1em;
+   flex-grow: 1;
+   border-right-style: solid;
+   border-left-style: solid;
+   border-color: black;
+}
+
+.selector > * {
+   padding: 1em;
+   background-color: #333333;
+   margin-top: 1em;
+   height:fit-content;
+}
+.col-header {
+   margin: 0;
+   background-color:#333333;
+   padding: 1em;
+}
+.chart {
+   border-style: solid;
+   border-left-style: none;
+   min-height: 400px;
+}
+
+.stats {
+   padding: 1em;
+   flex-grow: 1;
+   border-style: solid;
+   border-right-style: none;
+   border-left-style: none;
+}
+.settings {
+   background: #333333;
+   padding: 20px;
+   margin: 0;
+   color: white;
+}
+
+.settings > h3 {
+   margin-top: 0;
+   margin-bottom: 10px;
+}
+
+a:link {
+   color: greenyellow;
+   background-color: transparent;
+   text-decoration: none;
+ }
+ 
+ a:visited {
+   color:cornflowerblue;
+   background-color: transparent;
+   text-decoration: none;
+ }
+ 
+ a:hover {
+   color: lightgreen;
+   background-color: transparent;
+   text-decoration: underline;
+ }
+ 
+ a:active {
+   color: yellow;
+   background-color: transparent;
+   text-decoration: underline;
+ }
+
+ 
+
+.test {
+   border: 0px solid rgba(123, 123, 123, 0.498039);
+   color: #FFFFFF;
+   padding-left: 24px;
+   background-color: #333333;
+   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   word-wrap: break-word;
+   display: block;
+   line-height: 3em; /* a */
+   max-height: 5em; /* a x number of line to show (ex : 2 line)  */
+   
+ }
+ 
+ .load-box {
+   height:fit-content;
+ }
+ .load-box > * {
+   margin: 0;
+   margin-top: 1em;
+ }
+ .load-box > h4 {
+   margin-top: 0;
+ }
+
+ .load-box > input {
+   margin-left: 1em;
+ }
+
+ .instructions {
+   height:fit-content;
+ }
+ .instructions > * {
+   margin: 0;
+ }
+ .instructions > h4 {
+   margin-bottom: 1em;
+ }
+
+ .age-box {
+   height: fit-content;
+ }
+
+ .stats > * {
+   margin-top: 0.2em;
+   margin-bottom: 0.2em;
+ }
+ .stats > h2 {
+   margin: auto;
+ }

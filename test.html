@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Project 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/styles.css">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="Maps.js"></script>
+<body>
+<div class="header">
+   <h2 class="title">Project 3b : COVID Cases Counter by County : Hash Map Vs. Tree Map</h2>
+   <h4 class="names">By: Jonathan Reksono & Nick Lowe</h4>
+</div>
+   <div class="flex-row">
+      <div class="options">
+         <div class = "selector"> 
+            <div class = "instructions">
+               <h4>Instructions</h4>
+               <ol class = "instruction-list">
+                  <li>Select a data structure and click load.</li>
+                  <li>Enter desired age range and click search.</li>
+                  <li>Results will be displayed on right.</li>
+               </ol>
+            </div>
+            <div class = "load-box">
+               <h4>Which data structure to store data:</h4>
+                  <input type="radio" id="treemap" name="data_structure" value="Tree">
+                  <label>Treemap</label><br>
+                  <input type="radio" id="hashmap" name="data_structure" value="Hash">
+                  <label>Hashmap</label><br>
+                  <button class="load" onclick="loadDataStructure()">Load</button>
+            </div>
+            <div class = "age-box">
+               <label for="quantity"> Age Range (between 0 and 118):</label>
+               <input type="number" id="lo_age" name="quantity" placeholder="0" min="0" max="118"> to 
+               <input type="number" id="hi_age" name="quantity" placeholder="118" min="0" max="118">
+               <button class="load" onclick="SearchDataInAgeRange()">Search</button>
+            </div>
+         </div>
+      </div>
+      <div class="chart" id="observablehq-CountyChart-369441e1"></div>
+      <div class="stats">
+         <h2>Statistics</h2>
+         <p>-------------------------------------------</p>
+         <h3>Tree Map</h3>
+         <p> -   Load Time: <span id="TreeMapLoadTime">0</span> microseconds</p>
+         <p> - Search Time: <span id="TreeMapSearchTime">0</span>  microseconds</p>
+         <h3>Hash Map</h3>
+         <p> -   Load Time: <span id="HashMapLoadTime">0</span> microseconds</p>
+         <p> - Search Time: <span id="HashMapSearchTime">0</span> microseconds</p>
+         <p>-------------------------------------------</p>
+         <p>Map loaded from <span id="map-type">______</span></p>
+         <p>Age range: <span id="lower_age">_</span> to <span id="higher_age"></span></p>
+      </div>
+   </div>
+<div class="settings">
+   <h3>Sources</h3>
+   <ul>
+      <li>Chart (how it's made): <a href="https://observablehq.com/@observablehq/build-your-first-choropleth-map-with-observable-plot">Observablehq: Build your first choropleth map with Observable Plot</a></li>
+      <li>Map Geometry: <a href="https://github.com/topojson/us-atlas">Github: U.S. Atlas TopoJSON</a></li>
+      <li>Emscripten (How the c++ code is embedded): <a href="https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html?highlight=embind">Emscripten: Embind</a></li>
+   </ul>
+</div>
+
+
+</body>
+
+
+<!-- This script needs to be included directly in the html -->>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<script type="module">
+   import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+   import define from "https://api.observablehq.com/d/68745bf3e80c591b.js?v=3";
+   const main = new Runtime().module(define, name => {
+      if (name === "CountyChart") return new Inspector(document.querySelector("#observablehq-CountyChart-369441e1"));
+   });
+   window.main = main;
+
+   function updateChart(chart_data) {
+      main.redefine("fl_covid_data", chart_data);
+   }
+   window.updateChart = updateChart;
+</script>
+<script src="scripts/main.js"></script>
+
+</html>
