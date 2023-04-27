@@ -18,3 +18,6 @@ emcc --bind -O3 Treemap.cpp CovidHashMap.cpp -o Maps.js --preload-file data_file
 Chart (how it's made):https://observablehq.com/@observablehq/build-your-first-choropleth-map-with-observable-plot
 Map Geometry (For graph: loaded in the observable website): https://github.com/topojson/us-atlas
 Emscripten (How the c++ code is embedded): https://emscripten.org/docs/porting/connecting_cpp_and_javascript/embind.html?highlight=embind
+### Screenshot
+---
+![alt text](./preview-screenshot.png)
